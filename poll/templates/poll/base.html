@@ -1,0 +1,104 @@
+<html><head>
+<title>Poll App By Roshan</title>
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+    .navbar-default, .btn, .form-control, .panel {
+        border-radius: 1;
+    }
+    .navbar-default {
+        background-color: rgba(12, 12, 23, 0.7);
+        border-color: rgba(245, 245, 220, .6);
+        box-shadow: 0px 3px 3px 0px #ddd;
+        font-size: large;
+    }
+    .navbar-default .navbar-nav>li>a {
+        color: #fff;
+    }
+    .navbar-default .navbar-nav>li>a:hover {
+        color: rgb(244, 248, 4);
+    }
+    .navbar-default .navbar-brand:hover {
+        color: rgb(244, 248, 4);
+    }
+    .navbar-default .navbar-brand {
+        color: #fdf0f0;
+    }
+    .navbar-default .navbar-nav>.active>a, 
+    .navbar-default .navbar-nav>.active>a:focus, 
+    .navbar-default .navbar-nav>.active>a:hover {
+        background-color: rgba(1, 6, 255, 0.7);
+        border-bottom: 4px solid #ddd;
+    }
+    .panel-default > .panel-heading {
+        color: rgb(255, 255, 255);
+        background-color: rgba(1, 6, 255, 0.7);
+        border-color: rgba(245, 245, 220, .6);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0; 
+        font-size: large;
+    }
+    .panel-footer {
+        background-color: rgba(1, 6, 255, 0.7);
+        border-color: rgba(245, 245, 220, .4);
+        font-size: large;
+        color: #fff;
+    }
+    .panel {
+        box-shadow: 0px 3px 3px 0px #ddd;
+    }
+    a.navbar-brand, .panel-title {
+        font-weight: bolder;
+    }
+    .navbar-toggle {
+        border-color: #fff !important; /* Set the border color to white */
+      }
+      
+      .navbar-toggle .icon-bar {
+        background-color: #fff !important; /* Set the icon color to white */
+      }
+      
+
+.nav-bar {background-color:rgb(245, 130, 7); }
+.nav-bar a{color:rgb(243, 242, 240); text-decoration:None; margin:40px; font-family: Felix Titling; font-size:30px;}
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: rgba(245, 245, 220, .7);
+    border-color: rgba(245, 245, 220, .6);
+    border-top-left-radius: 0;
+	border-top-right-radius: 0; 
+}
+.panel  {background-color: #7ac2b9}
+body{background-color:lightcyan;}
+.panel-footer {
+	background-color: rgba(245, 245, 220, .5);
+    border-color: rgba(245, 245, 220, .4);
+}
+.panel {
+	box-shadow: 0px 3px 3px 0px #ddd;
+}
+a.navbar-brand, .panel-title {
+	font-weight: bolder;
+}
+</style>
+</head>
+<body>
+<center>
+<div class="nav-bar">
+{% if user.is_authenticated %}
+	<a href="{% url 'ulogout' %}">Logout</a>
+	<a href="{% url 'ucp' %}">Change Password</a>
+	<a href="{% url 'home' %}">Poll Questions</a>
+	<a href="{% url 'create' %}">Create</a>
+{% else %}
+	<a href="{% url 'uhome' %}">Login</a>
+	<a href="{% url 'usignup' %}">Signup</a>
+{% endif %}
+</div>
+{%   block main  %}{%   endblock %}
+</center>
+</body>
+</html>

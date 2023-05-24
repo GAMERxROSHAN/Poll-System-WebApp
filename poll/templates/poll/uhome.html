@@ -1,0 +1,14 @@
+{% extends 'poll/base.html' %}
+{% block main %}
+<h1>Login Page by Roshan Sonavane D057</h1>
+<form method="POST">
+{% csrf_token %}
+<input type="text" name="un" placeholder="enter username" required>
+<br><br>
+<input type="password" name="pw" placeholder="enter password" required>
+<br><br>
+<input type="submit" value="login" />
+</form>
+<i>
+{{ msg }}</i>
+{% endblock %}

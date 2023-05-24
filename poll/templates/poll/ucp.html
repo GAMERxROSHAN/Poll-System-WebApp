@@ -1,0 +1,18 @@
+{% extends 'poll/base.html' %}
+{% block main %}
+<head><style>
+    body{background-color: aqua;}
+    *{font-size: 50px; font-family: 'Times New Roman';}
+</style></head>
+<h1>Change Password Page</h1>
+<form method="POST">
+{% csrf_token %}
+<input type="password" name="pw1" placeholder="enter new password" class="change-passwor" required>
+<br><br>
+<input type="password" name="pw2" placeholder="confirm password" class="change-passwor" required>
+<br><br>
+<input type="submit" value="Change Password" class="change-passwor" />
+
+</form>
+{{ msg }}
+{% endblock %}
